@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!DOCTYPE Config SYSTEM "Config.dtd">
+<Config>
+	<Port value="2005"/>
+	<UserInfo login="mam" password="mam"/>
+	<UserInfo login="ove" password="ove"/>
+
+	<DebugRunTimeout timeOut="60"/>
+	<Redirect host="192.168.0.12" port="2005"/>
+
+    <ExecuteConfigs>
+    </ExecuteConfigs>
+
+</Config>

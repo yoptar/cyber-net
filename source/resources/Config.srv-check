@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!DOCTYPE Config SYSTEM "Config.dtd">
+<Config>
+	<Port value="2005"/>
+	<UserInfo login="mam" password="mam"/>
+	<UserInfo login="ove" password="ove"/>
+
+	<DebugRunTimeout timeOut="60"/>
+<!--
+	<Redirect host="192.168.0.12" port="2005"/>
+-->
+
+    <ExecuteConfigs>
+
+        <ExecuteConfig type="msvc">
+
+        	<CompileDir><!--compile-trunk--></CompileDir>
+        	<ProgramFile><!--main.cpp--></ProgramFile>
+
+        	<CommandsEnv><!--
+        	--></CommandsEnv>
+
+        	<Command name="compile" timeOut="60">
+        		<Args>
+        		<!--
+        		C:\mingw\bin\g++.exe -g -Wall -o Release\result.exe *.cpp
+        		-->
+        		</Args>
+        	</Command>
+
+        	<Command name="run">
+        		<Args prefixWithDir="true">
+        	<!--
+        	Release\result.exe
+        	-->
+        		</Args>
+        	</Command>
+
+        </ExecuteConfig>
+
+        <ExecuteConfig type="pas">
+
+        	<CompileDir><!--compile-trunk--></CompileDir>
+        	<ProgramFile><!--main.pas--></ProgramFile>
+
+        	<CommandsEnv><!--
+        	--></CommandsEnv>
+
+        	<Command name="compile" timeOut="60">
+        		<Args>
+        		<!--
+				c:\fpc\2.2.0\bin\i386-win32\fpc -FURelease -oRelease\result.exe main.pas
+        		-->
+        		</Args>
+        	</Command>
+
+        	<Command name="run">
+        		<Args prefixWithDir="true">
+        	<!--
+        	Release\result.exe
+        	-->
+        		</Args>
+        	</Command>
+
+        </ExecuteConfig>
+
+
+        <ExecuteConfig type="java">
+
+        	<CompileDir><!--compile-trunk-java--></CompileDir>
+        	<ProgramFile><!--Main.java--></ProgramFile>
+
+        	<CommandsEnv><!--
+				JAVA_HOME=C:\jdk1.6.0
+			--></CommandsEnv>
+
+        	<Command name="compile" timeOut="60">
+        		<Args>
+        		<!--
+        		"C:\jdk1.6.0\bin\javac" -cp . *.java
+        		-->
+        		</Args>
+        	</Command>
+
+        	<Command name="run">
+        		<Args>
+	        	<!--
+        		"C:\jdk1.6.0\bin\java" -cp . Main
+    	    	-->
+        		</Args>
+        	</Command>
+
+        </ExecuteConfig>
+
+    </ExecuteConfigs>
+
+</Config>

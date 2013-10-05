@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Response SYSTEM "http://de.ifmo.ru/--DTD/Response.dtd">
+
+<Response>
+  <CheckingResult id="1" Time="1531" Result="1">
+    <!--1
+2
+3
+-->
+  </CheckingResult>
+  <CheckingResult id="2" Time="1516" Result="0">
+    <!--3
+4
+5
+-->
+  </CheckingResult>
+</Response>

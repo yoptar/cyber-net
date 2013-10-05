@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+
+<!ELEMENT Config (Port, UserInfo+, DebugRunTimeout*, Redirect*, ExecuteConfigs)>
+<!ELEMENT Port EMPTY>
+<!ATTLIST Port
+	value CDATA #REQUIRED
+>
+<!ELEMENT UserInfo EMPTY>
+<!ATTLIST UserInfo
+	login CDATA #REQUIRED
+	password CDATA #REQUIRED
+>
+
+<!ELEMENT DebugRunTimeout EMPTY>
+<!ATTLIST DebugRunTimeout
+	timeOut CDATA #REQUIRED
+>
+
+<!ELEMENT Redirect EMPTY>
+<!ATTLIST Redirect
+	host CDATA #REQUIRED
+	port CDATA #REQUIRED
+>
+
+<!ELEMENT ExecuteConfigs (ExecuteConfig*)>
+<!ELEMENT ExecuteConfig (CompileDir, ProgramFile, CommandsEnv, Command+)>
+<!ATTLIST ExecuteConfig
+	type CDATA #REQUIRED
+>
+
+<!ELEMENT CompileDir (#PCDATA)>
+<!ELEMENT ProgramFile (#PCDATA)>
+<!ELEMENT CommandsEnv (#PCDATA)>
+<!ELEMENT Command (Args)>
+<!ATTLIST Command
+	name CDATA #REQUIRED
+	timeOut CDATA #IMPLIED
+>
+
+<!ELEMENT Args (#PCDATA)>
+<!ATTLIST Args
+	prefixWithDir CDATA #IMPLIED
+>

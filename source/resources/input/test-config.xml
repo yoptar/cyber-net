@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!DOCTYPE TestConfig SYSTEM "TestSet.dtd">
+<TestConfig>
+<!--
+	<URL>url:rlcp://ove:ove@127.0.0.1:2005</URL>
+-->
+	<URL>url:rlcp://ove:ove@192.168.0.12:2005</URL>
+	<RLCPRequest>
+		<Request>
+			<Conditions>
+                <ConditionForChecking id="1" Time="5">
+                        <Input>
+                        <!--
+тест1
+тест2
+тест3
+-->
+                        </Input>
+                        <Output>
+                        <!--
+тест1
+тест2
+тест3
+-->
+                        </Output>
+                </ConditionForChecking>
+                <ConditionForChecking id="2" Time="5">
+                        <Input>
+                        <!--
+тест1
+тест2
+тест3
+-->
+                        </Input>
+                        <Output>
+                        <!--
+тест1
+тест2
+тест3
+-->
+                        </Output>
+                </ConditionForChecking>
+			</Conditions>
+			<Instructions>
+				<!--
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;windows&amp;#0045;1251&amp;quot;?&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;Program langType=&amp;quot;java&amp;quot;&amp;gt;&amp;lt;!&amp;#0045;&amp;#0045;import java.io.*;&amp;amp;lt;br/&amp;amp;gt;&amp;amp;lt;br/&amp;amp;gt;public class Main{&amp;amp;lt;br/&amp;amp;gt;&amp;amp;lt;br/&amp;amp;gt;    public static void main( String []args ){&amp;amp;lt;br/&amp;amp;gt;        try{&amp;amp;lt;br/&amp;amp;gt;            BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );&amp;amp;lt;br/&amp;amp;gt;            String []t = new String[]{&amp;amp;lt;br/&amp;amp;gt;                br.readLine(),&amp;amp;lt;br/&amp;amp;gt;                br.readLine(),&amp;amp;lt;br/&amp;amp;gt;                br.readLine() };&amp;amp;lt;br/&amp;amp;gt;&amp;amp;lt;br/&amp;amp;gt;            for( int i = 0; i &amp;amp;lt; t.length; i++ )&amp;amp;lt;br/&amp;amp;gt;                System.out.println( t[i] );&amp;amp;lt;br/&amp;amp;gt;        }catch( Exception exc ){&amp;amp;lt;br/&amp;amp;gt;            exc.printStackTrace();&amp;amp;lt;br/&amp;amp;gt;        }&amp;amp;lt;br/&amp;amp;gt;    }&amp;amp;lt;br/&amp;amp;gt;}&amp;#0045;&amp;#0045;&amp;gt;&amp;lt;/Program&amp;gt;&amp;lt;br/&amp;gt;
+-->
+			</Instructions>
+		</Request>
+	</RLCPRequest>
+</TestConfig>

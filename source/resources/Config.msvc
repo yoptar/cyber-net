@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!DOCTYPE Config SYSTEM "Config.dtd">
+<Config>
+	<Port value="2005"/>
+	<UserInfo login="mam" password="mam"/>
+	<UserInfo login="ove" password="ove"/>
+
+	<DebugRunTimeout timeOut="60"/>
+
+<!-- Для проверяющего сервера на cde.ifmo.ru - этот элемент указывает, что сервер работает в режиме шлюза 
+     На сервере с компиляторами этот элемент надо закомментировать
+-->
+	<Redirect host="192.168.0.12" port="2005"/>
+
+    <ExecuteConfigs>
+
+        <ExecuteConfig type="msvc">
+
+        	<CompileDir><!--compile-trunk--></CompileDir>
+        	<ProgramFile><!--main.cpp--></ProgramFile>
+
+        	<CommandsEnv><!--
+MSVCDir=C:\Program Files\Microsoft Visual Studio .NET 2003
+VCINSTALLDIR=C:\Program Files\Microsoft Visual Studio .NET 2003
+PATH=%DevEnvDir%;%MSVCDir%\BIN;%VCINSTALLDIR%\Common7\Tools;%MSVCDir%\Common7\IDE;%VCINSTALLDIR%\Common7\Tools\bin\prerelease;%VCINSTALLDIR%\Common7\Tools\bin;%FrameworkSDKDir%\bin;%FrameworkDir%\%FrameworkVersion%;%PATH%;
+INCLUDE=%MSVCDir%\ATLMFC\INCLUDE;%MSVCDir%\INCLUDE;%MSVCDir%\PlatformSDK\include\prerelease;%MSVCDir%\PlatformSDK\include;%FrameworkSDKDir%\include
+INCLUDE=%INCLUDE%;%MSVCDir%\Vc7\include
+LIB=%MSVCDir%\ATLMFC\LIB;%MSVCDir%\LIB;%MSVCDir%\PlatformSDK\lib\prerelease;%MSVCDir%\PlatformSDK\lib;%FrameworkSDKDir%\lib;%LIB%
+LIB=%LIB%;%MSVCDir%\Vc7\lib;%MSVCDir%\Vc7\PlatformSDK\lib
+        	--></CommandsEnv>
+
+        	<Command name="compile" timeOut="5">
+        		<Args>
+        		<!--
+        		"C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\bin\cl.exe" /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /FD /EHsc /ML /GS /Fo"Release/" /Fd"Release/vc70.pdb" /W3 /nologo /c /Wp64 /Zi /TP *.cpp
+        		-->
+        		</Args>
+        	</Command>
+
+        	<Command name="link" timeOut="5">
+        		<Args>
+        	<!--
+        	"C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\bin\link.exe" /OUT:"Release/result.exe" /INCREMENTAL:NO /NOLOGO /DEBUG /PDB:"Release/Remove-it.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /MACHINE:X86   kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib Release/main.obj
+        	-->
+        		</Args>
+        	</Command>
+
+        	<Command name="run">
+        		<Args prefixWithDir="true">
+        	<!--
+        	Release\result.exe
+        	-->
+        		</Args>
+        	</Command>
+
+        </ExecuteConfig>
+
+
+        <ExecuteConfig type="java">
+
+        	<CompileDir><!--compile-trunk-java--></CompileDir>
+        	<ProgramFile><!--Main.java--></ProgramFile>
+
+        	<CommandsEnv><!-- --></CommandsEnv>
+
+        	<Command name="compile" timeOut="5">
+        		<Args>
+        		<!--
+        		"C:\Program Files\Java\jdk1.6.0\bin\javac" -cp . *.java
+        		-->
+        		</Args>
+        	</Command>
+
+        	<Command name="run">
+        		<Args>
+	        	<!--
+        		"C:\Program Files\Java\jdk1.6.0\bin\java" -cp . Main
+    	    	-->
+        		</Args>
+        	</Command>
+
+        </ExecuteConfig>
+
+    </ExecuteConfigs>
+
+</Config>
